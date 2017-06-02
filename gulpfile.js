@@ -74,6 +74,7 @@ gulp.task('clean', function () {
 gulp.task('scripts', function(){
     app.addscripts([
         config.bowerDir+'/jquery/dist/jquery.js',
+        config.bowerDir+'/bootstrap-sass/assets/javascripts/bootstrap.js',
         config.assetsDir+'/js/**/*.js'
     ], 'main.js');
 });
