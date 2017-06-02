@@ -35,13 +35,13 @@ app.addStyle = function (path, filename) {
 };
 
 app.addscripts = function (path, filename) {
-    gulp.src(path)
+    return gulp.src(path)
         .pipe(plumber())
         .pipe(gulpif(config.sourceMaps, sourcemaps.init()))
-        .pipe(concat(path))
+        .pipe(concat(filename))
         .pipe(gulpif(config.production, uglify()))
-        .pipe(gulpif(config.production, sourcemaps.write('.')))
-        .pipe(gulp.dest('web/js/'+filename));
+        .pipe(gulpif(config.sourceMaps, sourcemaps.write('.')))
+        .pipe(gulp.dest('web/js'));
 }
 
 app.copy = function(srcFiles, outputDir){
@@ -74,8 +74,8 @@ gulp.task('clean', function () {
 gulp.task('scripts', function(){
     app.addscripts([
         config.bowerDir+'/jquery/dist/jquery.js',
-        config.assetsDir+'/js/main.js'
-    ], 'site.js');
+        config.assetsDir+'/js/**/*.js'
+    ], 'main.js');
 });
 //default
 gulp.task('default',['styles', 'scripts'], function(){
