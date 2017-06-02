@@ -1,0 +1,16 @@
+# twitter.yml
+parameters:
+  class.guzzle.response: Guzzle\Http\Message\Response
+  class.guzzle.client: Guzzle\Http\Client
+  class.guzzle.oauthplugin: Guzzle\Plugin\Oauth\OauthPlugin
+
+services:
+  guzzle.twitter.client:
+    class: %class.guzzle.client%
+    arguments: [%twitter.baseurl%]
+    calls:
+      - [addSubscriber, [@guzzle.twitter.oauthplugin]]
+
+  guzzle.twitter.oauthplugin:
+    class: %class.guzzle.oauthplugin%
+    arguments: [%twitter.config%]

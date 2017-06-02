@@ -1,0 +1,29 @@
+{
+  "name": "brianclincy",
+  "description": "Brian Clincy's personal web site for brianclincy.com fixing errors",
+  "main": "index.js",
+  "authors": [
+    "Brian Clincy"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "personal",
+    "website",
+    "clincy",
+    "brian"
+  ],
+  "homepage": "http://www.brianclincy.com",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "web/vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-sass": "^3.3.7",
+    "jQuery": "^3.2.1",
+    "font-awesome": "^4.7.0"
+  }
+}

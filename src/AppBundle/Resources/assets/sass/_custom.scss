@@ -1,0 +1,116 @@
+.navbar {
+  margin-bottom: 0;
+  a {
+    color: set-text-color($main-color) !important;
+  }
+  a:hover {
+    background: set-bgcolor($main-color);
+    color: set-text-color($main-color);
+    text-shadow: 2px 2px #241172;
+  }
+  .fa {
+    font-size: 18px;
+    padding: 2px;
+  }
+
+  .showcase {
+    h1{
+      font-size:60px;
+    }
+
+    .container{
+      background:#fff;
+      opacity: 0.8;
+      padding: 20px 30px 30px 20px;
+    }
+  }
+}
+.section-a {
+  display:flex;
+  padding: 30px 0;
+  text-align: center;
+  background: $main-color;
+  color: set_text-color($main-color);
+  a {
+    color: lighten($main-color, 25%);
+  }
+  div.col-md-4 {
+    min-height: 200px;
+    flex: 1;
+  }
+  .btn{
+    color: set_text-color($main-color);
+    background: darken($main-color, 15%);
+  }
+  a:hover.btn{
+    background: darken($main-color, 25%);
+  }
+
+  .fa {
+    font-size: $icon-size;
+  }
+  .fa-inline {
+    font-size: 10px;
+    padding-right: 5px;
+  }
+  p {
+    text-align: left;
+  }
+
+}
+
+.section-b {
+  img {
+    padding:10px;
+    float: left;
+  }
+  background: #e6ebf1;
+  margin: 0px;
+  padding: 30px 0;
+  .fa {
+    font-size: $icon-size;
+  }
+}
+
+.fill {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden
+}
+.fill img {
+  flex-shrink: 0;
+  min-width: 100%;
+  min-height: 100%
+}
+footer {
+  margin: 0;
+  padding: 30px 0;
+  background: darken($main-color, 20%);
+  color: set_text-color($main-color);
+}
+address {
+  display: block;
+  padding: 10px;
+  margin: 5px 10px 5px 10px;
+  font-style: italic;
+  font-weight: 600;
+}
+/* ------- Form add ons ------ */
+
+label {
+  padding-right: 5px;
+}
+label::after {
+  content: ':';
+}
+.scroll-top {
+  position:fixed;
+  bottom:0;
+  right:6%;
+  z-index:100;
+  background: #f2f3f2;
+  font-size:24px;
+  border-top-left-radius:3px;
+  border-top-right-radius:3px;
+}

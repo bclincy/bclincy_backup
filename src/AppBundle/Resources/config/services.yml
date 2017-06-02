@@ -1,0 +1,8 @@
+# services.yml
+imports:
+- { resource: twitter.conf.yml }
+- { resource: twitter.yml }
+
+services:
+  guzzle.client:
+    class:  GuzzleHttp\Client

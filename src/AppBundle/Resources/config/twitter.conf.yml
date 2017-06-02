@@ -1,0 +1,8 @@
+parameters:
+  twitter.baseurl: https://api.twitter.com/1.1
+
+  twitter.config:
+    consumer_key: ***
+    consumer_secret: ***
+    token: ***
+    token_secret: ***
