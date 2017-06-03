@@ -4,7 +4,8 @@
     color: set-text-color($main-color) !important;
   }
   a:hover {
-    background: set-bgcolor($main-color);
+    background-color: #0A1612;
+    background-color: rgba(23,231,240,0.5);
     color: set-text-color($main-color);
     text-shadow: 2px 2px #241172;
   }

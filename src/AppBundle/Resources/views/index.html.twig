@@ -1,7 +1,7 @@
 {% extends "@App/layout.html.twig" %}
     {% block css %}
         {{ parent() }}
-        <link href="{{ asset('css/carousel.css') }}" rel="stylesheet" />
+        <link href="{{ asset('css/carousel.css') }}" rel="stylesheet"/>
     {% endblock css %}
 {% block content %}
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -13,7 +13,8 @@
         </ol>
         <div class="carousel-inner" role="listbox">
             <div class="item active">
-                <img class="first-slide" src="/images/love_carosel.jpg" alt="Love Community Garden">
+                <img class="first-slide" class="img-responsive" src="{{ asset('images/clincyText.jpg') }}"
+                     alt="Brian Clincy the profile">
 
                 <div class="container">
                     <div class="carousel-caption readable">
@@ -26,7 +27,7 @@
                 </div>
             </div>
             <div class="item">
-                <img class="second-slide" src="/images/carosel_.hoop.jpg" alt="Hoop House">
+                <img class="second-slide" src="{{ asset('images/inthebuild_sm.jpg') }}" alt="Brian Clincy in the building">
 
                 <div class="container">
                     <div class="carousel-caption readable">
@@ -40,7 +41,7 @@
                 </div>
             </div>
             <div class="item">
-                <img class="third-slide" src="images/sunflower.jpg" alt="Sunflower in the Garden">
+                <img class="third-slide" src="{{ asset('images/loveisaction.jpg') }}" alt="Love is an action word">
 
                 <div class="container">
                     <div class="carousel-caption readable">
@@ -74,9 +75,8 @@
                     <h3>News</h3>
 
                     <p>Don't even bother with me going off the top of the dome I get it on like Marvin, not to be lost in
-                        the Gaye ness
-                        of today's music. <a href="https://twitter.com/hashtag/bars?src=hash">#bars</a> Get the inside news
-                        in Clincy's world.</p>
+                        the Gaye ness of today's music. <a href="https://twitter.com/hashtag/bars?src=hash">#bars</a> Get the inside news in Clincy's world.
+                    </p>
 
                     <div><a href="/news" class="btn btn-primary">News</a></div>
                 </div>
@@ -93,8 +93,7 @@
 
                     <h3>Customizable</h3>
 
-                    <p>Don't even bother with me going off the dome I get it on like Marvin, not to be lost in the Gaye ness
-                        of todays music</p>
+                    <p>Don't even bother with me going off the dome I get it on like Marvin, not to be lost in the Gaye ness of todays music</p>
                 </div>
             </div>
         </div>
@@ -108,16 +107,14 @@
 
                     <h3>Clean and simple Code</h3>
 
-                    <p>Don't even bother with me going off the dome I get it on like Marvin, not to be lost in the Gaye ness
-                        of todays music</p>
+                    <p>Don't even bother with me going off the dome I get it on like Marvin, not to be lost in the Gaye ness of todays music</p>
                 </div>
                 <div class="col-md-6">
                     <i class="fa fa-gear"></i>
 
                     <h3>Sass Prep</h3>
 
-                    <p>Don't even bother with me going off the dome I get it on like Marvin, not to be lost in the Gaye ness
-                        of todays music</p>
+                    <p>Don't even bother with me going off the dome I get it on like Marvin, not to be lost in the Gaye ness of todays music</p>
                 </div>
             </div>
         </div>

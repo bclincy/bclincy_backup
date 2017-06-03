@@ -3,8 +3,8 @@
 
 /* Carousel base class */
 .carousel {
-    height: 500px;
-    margin-bottom: 3em;
+    height: 600px;
+    //margin-bottom: 3em;
 }
 
 /* Since positioning the image, we need to help out the caption */
@@ -14,11 +14,11 @@
 
 /* Declare heights because of positioning of img element */
 .carousel .item {
-    height: 500px;
+    height: 600px;
     background-color: #777;
 }
 .carousel .readable {
-    background-color: #fff;
+    background-color: #0A1612;
     background-color: rgba(0,0,0,0.5);
     border-radius: 25px;
 }
