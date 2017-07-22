@@ -26,6 +26,6 @@ class DefaultController extends Controller
      */
     public function aboutAction()
     {
-        return new Response('hello');
+        return $this->render('@App/default/index.html.twig', ['title' =>'building the man']);
     }
 }

@@ -38,14 +38,43 @@
           </div>
       </nav>
   </header>
+  <div class="title-bar">
+      <div class="container">
+          <h1>{% block pageTitle %}About{% endblock %}</h1>
+      </div>
+  </div>
   {% block content %}
     <h1>Hello Olivia</h1>
         {{ dump() }}
     {% endblock content %}
 
-    {% block javascripts %}
-      <script src="{{ asset('js/main.js') }}"></script>
-    {% endblock %}
+      <div class="row-c">
+      <div class="container">
+          <div class="row">
+              <div class="col-md-8 col-md-offset-2">
+                  <h2>Subscribe to my newsletter</h2>
 
+                  <p>If I'm interesting enough you want to stay connected subscribe to my newsletter and I'll push
+                      updates bigger than my social media</p>
+                  <hr>
+                  <form>
+                      <input type="text" class="form-control input-lg" placeholder="Enter Email">
+                      <br/>
+                      <button class="btn btn-primary btn-lg btn-block">Subscribe</button>
+                  </form>
+              </div>
+          </div>
+      </div>
+  </div>
+  <footer>
+      <div class="container">
+          &copy;
+          <script>document.write(new Date().getFullYear())</script>
+          Brian Clincy
+      </div>
+  </footer>
+  {% block javascripts %}
+      <script src="{{ asset('js/main.js') }}"></script>
+  {% endblock %}
   </body>
 </html>
