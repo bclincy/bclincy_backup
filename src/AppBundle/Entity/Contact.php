@@ -5,12 +5,12 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * ContactForm
+ * Contact
  *
- * @ORM\Table(name="contact_form")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\ContactFormRepository")
+ * @ORM\Table(name="contact")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\ContactRepository")
  */
-class ContactForm
+class Contact
 {
     /**
      * @var int
@@ -24,9 +24,16 @@ class ContactForm
     /**
      * @var string
      *
-     * @ORM\Column(name="name", type="string", length=200)
+     * @ORM\Column(name="fname", type="string", length=100)
      */
-    private $name;
+    private $fname;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="lname", type="string", length=120)
+     */
+    private $lname;
 
     /**
      * @var string
@@ -36,9 +43,9 @@ class ContactForm
     private $email;
 
     /**
-     * @var string
+     * @var array
      *
-     * @ORM\Column(name="subject", type="string", length=255, nullable=true)
+     * @ORM\Column(name="subject", type="simple_array")
      */
     private $subject;
 
@@ -50,18 +57,18 @@ class ContactForm
     private $message;
 
     /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="dateCreated", type="datetime")
-     */
-    private $dateCreated;
-
-    /**
      * @var bool
      *
-     * @ORM\Column(name="isRespondedTo", type="boolean")
+     * @ORM\Column(name="isReturned", type="boolean")
      */
-    private $isRespondedTo;
+    private $isReturned;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="recievedOn", type="datetime")
+     */
+    private $recievedOn;
 
 
     /**
@@ -75,27 +82,51 @@ class ContactForm
     }
 
     /**
-     * Set name
+     * Set fname
      *
-     * @param string $name
+     * @param string $fname
      *
-     * @return ContactForm
+     * @return Contact
      */
-    public function setName($name)
+    public function setFname($fname)
     {
-        $this->name = $name;
+        $this->fname = $fname;
 
         return $this;
     }
 
     /**
-     * Get name
+     * Get fname
      *
      * @return string
      */
-    public function getName()
+    public function getFname()
     {
-        return $this->name;
+        return $this->fname;
+    }
+
+    /**
+     * Set lname
+     *
+     * @param string $lname
+     *
+     * @return Contact
+     */
+    public function setLname($lname)
+    {
+        $this->lname = $lname;
+
+        return $this;
+    }
+
+    /**
+     * Get lname
+     *
+     * @return string
+     */
+    public function getLname()
+    {
+        return $this->lname;
     }
 
     /**
@@ -103,7 +134,7 @@ class ContactForm
      *
      * @param string $email
      *
-     * @return ContactForm
+     * @return Contact
      */
     public function setEmail($email)
     {
@@ -125,9 +156,9 @@ class ContactForm
     /**
      * Set subject
      *
-     * @param string $subject
+     * @param array $subject
      *
-     * @return ContactForm
+     * @return Contact
      */
     public function setSubject($subject)
     {
@@ -139,7 +170,7 @@ class ContactForm
     /**
      * Get subject
      *
-     * @return string
+     * @return array
      */
     public function getSubject()
     {
@@ -151,7 +182,7 @@ class ContactForm
      *
      * @param string $message
      *
-     * @return ContactForm
+     * @return Contact
      */
     public function setMessage($message)
     {
@@ -171,51 +202,51 @@ class ContactForm
     }
 
     /**
-     * Set dateCreated
+     * Set isReturned
      *
-     * @param \DateTime $dateCreated
+     * @param boolean $isReturned
      *
-     * @return ContactForm
+     * @return Contact
      */
-    public function setDateCreated($dateCreated)
+    public function setIsReturned($isReturned)
     {
-        $this->dateCreated = $dateCreated;
+        $this->isReturned = $isReturned;
 
         return $this;
     }
 
     /**
-     * Get dateCreated
-     *
-     * @return \DateTime
-     */
-    public function getDateCreated()
-    {
-        return $this->dateCreated;
-    }
-
-    /**
-     * Set isRespondedTo
-     *
-     * @param boolean $isRespondedTo
-     *
-     * @return ContactForm
-     */
-    public function setIsRespondedTo($isRespondedTo)
-    {
-        $this->isRespondedTo = $isRespondedTo;
-
-        return $this;
-    }
-
-    /**
-     * Get isRespondedTo
+     * Get isReturned
      *
      * @return bool
      */
-    public function getIsRespondedTo()
+    public function getIsReturned()
     {
-        return $this->isRespondedTo;
+        return $this->isReturned;
+    }
+
+    /**
+     * Set recievedOn
+     *
+     * @param \DateTime $recievedOn
+     *
+     * @return Contact
+     */
+    public function setRecievedOn($recievedOn)
+    {
+        $this->recievedOn = $recievedOn;
+
+        return $this;
+    }
+
+    /**
+     * Get recievedOn
+     *
+     * @return \DateTime
+     */
+    public function getRecievedOn()
+    {
+        return $this->recievedOn;
     }
 }
 

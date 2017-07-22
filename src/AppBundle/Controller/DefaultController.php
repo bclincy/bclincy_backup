@@ -19,4 +19,13 @@ class DefaultController extends Controller
     {
         return $this->render('@App/index.html.twig', ['title' =>'The man']);
     }
+
+    /**
+     * About Page
+     * @Route("about/", name="about")
+     */
+    public function aboutAction()
+    {
+        return new Response('hello');
+    }
 }

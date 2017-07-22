@@ -26,23 +26,28 @@
     }
   }
 }
-.section-a {
+
+.row-a {
   display:flex;
   padding: 30px 0;
   text-align: center;
   background: $main-color;
   color: set_text-color($main-color);
+
   a {
     color: lighten($main-color, 25%);
   }
+
   div.col-md-4 {
     min-height: 200px;
     flex: 1;
   }
+
   .btn{
     color: set_text-color($main-color);
     background: darken($main-color, 15%);
   }
+
   a:hover.btn{
     background: darken($main-color, 25%);
   }
@@ -50,29 +55,38 @@
   .fa {
     font-size: $icon-size;
   }
+
   .fa-inline {
     font-size: 10px;
     padding-right: 5px;
   }
+
   p {
     text-align: left;
   }
 
 }
 
-.section-b {
+.row-b {
+    background: #e6ebf1;
+    margin: 0px;
+    padding: 30px 0;
+
   img {
     padding:10px;
     float: left;
   }
-  background: #e6ebf1;
-  margin: 0px;
-  padding: 30px 0;
+
   .fa {
     font-size: $icon-size;
   }
 }
 
+.row-c {
+  padding: 60px 0;
+  margin: 5px 0 2em 0;
+  text-align: center;
+}
 .fill {
   display: flex;
   justify-content: center;
@@ -85,7 +99,6 @@
   min-height: 100%
 }
 footer {
-  margin: 0;
   padding: 30px 0;
   background: darken($main-color, 20%);
   color: set_text-color($main-color);
@@ -114,4 +127,7 @@ label::after {
   font-size:24px;
   border-top-left-radius:3px;
   border-top-right-radius:3px;
+}
+.panel-heading h4 {
+  colo: set-text-color($main-color);
 }
