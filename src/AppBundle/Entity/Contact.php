@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints\DateTime;
 
 /**
  * Contact
@@ -234,7 +235,7 @@ class Contact
      */
     public function setRecievedOn($recievedOn)
     {
-        $this->recievedOn = $recievedOn;
+        $this->recievedOn = new DateTime('now');
 
         return $this;
     }

@@ -131,3 +131,8 @@ label::after {
 .panel-heading h4 {
   colo: set-text-color($main-color);
 }
+.title-bar {
+  background: url(../images/clincyBG2.jpg) no-repeat -100px -200px;
+  min-height: 40px;
+  margin:0 0 1em 0;
+}

@@ -38,6 +38,13 @@ class Post
     /**
      * @var string
      *
+     * @ORM\Column(name="slug", type="string", length=150)
+     */
+    private $slug;
+
+    /**
+     * @var string
+     *
      * @ORM\Column(name="body", type="text")
      */
     private $body;
@@ -148,7 +155,7 @@ class Post
      */
     public function setCreatedOn($createdOn)
     {
-        $this->createdOn = $createdOn;
+        $this->createdOn = new \DateTime('now');
 
         return $this;
     }
