@@ -132,7 +132,8 @@ label::after {
   colo: set-text-color($main-color);
 }
 .title-bar {
-  background: url(../images/clincyBG2.jpg) no-repeat -100px -200px;
-  min-height: 40px;
+  background: url(../images/clincybgsm2.jpg) no-repeat 0px -250px;
+  color: #fff;
+  min-height: 100px;
   margin:0 0 1em 0;
 }

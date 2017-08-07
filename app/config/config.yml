@@ -68,3 +68,15 @@ swiftmailer:
     username: '%mailer_user%'
     password: '%mailer_password%'
     spool: { type: memory }
+fos_user:
+    ## Your configuration for FOS
+    db_driver: orm
+    firewall_name: main
+    user_class: AppBundle\Entity\User
+    group:
+        group_class: AppBundle\Entity\Group
+
+    ## To solve the problem
+    from_email:
+        address: "noreply@yourcompany.com"
+        sender_name: "No Reply"
