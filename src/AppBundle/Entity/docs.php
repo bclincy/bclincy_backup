@@ -52,7 +52,7 @@ class Docs
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="createdDate", type="datetime", options={"default" : now()})
+     * @ORM\Column(name="createdDate", type="datetime")
      */
     private $createdDate;
 

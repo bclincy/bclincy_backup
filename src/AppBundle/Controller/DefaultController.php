@@ -17,7 +17,7 @@ class DefaultController extends Controller
      */
     public function indexAction(Request $request)
     {
-        return $this->render('@App/index.html.twig', ['title' =>'The man']);
+        return $this->render('@App/index.html.twig', ['title' =>'The man', 'pageTag' => 'About Us']);
     }
 
     /**

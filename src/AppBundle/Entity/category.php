@@ -3,14 +3,18 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints\DateTime;
+use Symfony\Component\Validator\Constraints as Assert;
+
+
 
 /**
- * postType
+ * Category
  *
  * @ORM\Table(name="post_type")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\postTypeRepository")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\CategoryRepository")
  */
-class postType
+class Category
 {
     /**
      * @var int
@@ -23,7 +27,7 @@ class postType
 
     /**
      * @var string
-     *
+     * @Assert\NotBlank()
      * @ORM\Column(name="name", type="string", length=150, unique=true)
      */
     private $name;
@@ -42,7 +46,12 @@ class postType
      */
     private $rgt;
 
-
+    /**
+     * @var datetime
+     * @Assert\Type("\DateTime")
+     * @ORM\Column(name="dateCreated", type="datetime")
+     */
+    private $dateCreated;
     /**
      * Get id
      *
@@ -58,7 +67,7 @@ class postType
      *
      * @param string $name
      *
-     * @return postType
+     * @return Category
      */
     public function setName($name)
     {
@@ -66,6 +75,7 @@ class postType
 
         return $this;
     }
+
 
     /**
      * Get name
@@ -82,7 +92,7 @@ class postType
      *
      * @param integer $lft
      *
-     * @return postType
+     * @return Category
      */
     public function setLft($lft)
     {
@@ -106,7 +116,7 @@ class postType
      *
      * @param integer $rgt
      *
-     * @return postType
+     * @return Category
      */
     public function setRgt($rgt)
     {
@@ -123,6 +133,26 @@ class postType
     public function getRgt()
     {
         return $this->rgt;
+    }
+
+    /**
+     * @return DateTime
+     */
+    public function getDateCreated()
+    {
+        return $this->dateCreated;
+    }
+
+
+    /**
+     * @param \DateTime $dateCreated
+     */
+    public function setDateCreated(\DateTime $dateCreated = null)
+    {
+        if ($dateCreated === null) {
+            $dateCreated = new \DateTime('now');
+        }
+        $this->dateCreated = $dateCreated;
     }
 }
 

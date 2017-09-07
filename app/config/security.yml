@@ -7,6 +7,9 @@ security:
         in_memory:
             memory: ~
 
+    encoders:
+        AppBundle\Entity\User: bcrypt
+
     firewalls:
         # disables authentication for assets and the profiler, adapt it according to your needs
         dev:
@@ -22,6 +25,3 @@ security:
 
             # http://symfony.com/doc/current/cookbook/security/form_login_setup.html
             #form_login: ~
-security:
-    encoders:
-        AppBundle\Entity\User: bcrypt

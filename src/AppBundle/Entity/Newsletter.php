@@ -3,15 +3,14 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use FOS\UserBundle\Model\User as BaseUser;
 
 /**
- * User
+ * Newsletter
  *
- * @ORM\Table(name="user")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\UserRepository")
+ * @ORM\Table(name="newsletter")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\NewsletterRepository")
  */
-class User extends BaseUser
+class Newsletter
 {
     /**
      * @var int
@@ -20,36 +19,49 @@ class User extends BaseUser
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    protected $id;
+    private $id;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="fname", type="string", length=255)
+     * @ORM\Column(name="fname", type="string", length=100, nullable=true)
      */
     private $fname;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="lname", type="string", length=255)
+     * @ORM\Column(name="lname", type="string", length=120, nullable=true)
      */
     private $lname;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="email", type="string", length=150)
+     */
+    private $email;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="DOB", type="date")
+     * @ORM\Column(name="addedOn", type="datetime")
      */
-    private $dOB;
+    private $addedOn;
 
     /**
-     * @var int
+     * @var string
      *
-     * @ORM\Column(name="customerId", type="integer", nullable=true)
+     * @ORM\Column(name="referrer", type="string", length=255)
      */
-    private $customerId;
+    private $referrer;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="list", type="string", length=150)
+     */
+    private $list;
 
 
     /**
@@ -67,7 +79,7 @@ class User extends BaseUser
      *
      * @param string $fname
      *
-     * @return User
+     * @return Newsletter
      */
     public function setFname($fname)
     {
@@ -91,7 +103,7 @@ class User extends BaseUser
      *
      * @param string $lname
      *
-     * @return User
+     * @return Newsletter
      */
     public function setLname($lname)
     {
@@ -115,7 +127,7 @@ class User extends BaseUser
      *
      * @param string $email
      *
-     * @return User
+     * @return Newsletter
      */
     public function setEmail($email)
     {
@@ -135,51 +147,75 @@ class User extends BaseUser
     }
 
     /**
-     * Set dOB
+     * Set addedOn
      *
-     * @param \DateTime $dOB
+     * @param \DateTime $addedOn
      *
-     * @return User
+     * @return Newsletter
      */
-    public function setDOB($dOB)
+    public function setAddedOn($addedOn)
     {
-        $this->dOB = $dOB;
+        $this->addedOn = $addedOn;
 
         return $this;
     }
 
     /**
-     * Get dOB
+     * Get addedOn
      *
      * @return \DateTime
      */
-    public function getDOB()
+    public function getAddedOn()
     {
-        return $this->dOB;
+        return $this->addedOn;
     }
 
     /**
-     * Set customerId
+     * Set referrer
      *
-     * @param integer $customerId
+     * @param string $referrer
      *
-     * @return User
+     * @return Newsletter
      */
-    public function setCustomerId($customerId)
+    public function setReferrer($referrer)
     {
-        $this->customerId = $customerId;
+        $this->referrer = $referrer;
 
         return $this;
     }
 
     /**
-     * Get customerId
+     * Get referrer
      *
-     * @return int
+     * @return string
      */
-    public function getCustomerId()
+    public function getReferrer()
     {
-        return $this->customerId;
+        return $this->referrer;
+    }
+
+    /**
+     * Set list
+     *
+     * @param string $list
+     *
+     * @return Newsletter
+     */
+    public function setList($list)
+    {
+        $this->list = $list;
+
+        return $this;
+    }
+
+    /**
+     * Get list
+     *
+     * @return string
+     */
+    public function getList()
+    {
+        return $this->list;
     }
 }
 
